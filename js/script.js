@@ -16,7 +16,6 @@ async function displayRaceSchedule() {
 
     const races = await fetchRaceSchedule();
     if (!races) {
-        // Handle the error gracefully, e.g., display a message to the user
         raceScheduleElement.innerHTML = '<p>Error fetching race schedule. Please try again later.</p>';
         return;
     }
