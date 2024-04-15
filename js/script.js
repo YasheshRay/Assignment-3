@@ -15,6 +15,11 @@ async function displayRaceSchedule() {
     raceScheduleElement.innerHTML = '<h2>Race Schedule</h2>';
 
     const races = await fetchRaceSchedule();
+    if (!races) {
+        // Handle the error gracefully, e.g., display a message to the user
+        raceScheduleElement.innerHTML = '<p>Error fetching race schedule. Please try again later.</p>';
+        return;
+    }
     races.forEach(race => {
         const raceElement = document.createElement('div');
         raceElement.innerHTML = `
@@ -26,5 +31,6 @@ async function displayRaceSchedule() {
         raceScheduleElement.appendChild(raceElement);
     });
 }
+
 
 displayRaceSchedule();
