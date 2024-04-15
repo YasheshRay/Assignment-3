@@ -2,7 +2,7 @@ const apiKey = 'ff6d54dab8b334e2ad30edd454852d9a';
 
 async function fetchRaceSchedule() {
     try {
-        const response = await fetch(`http://ergast.com/api/f1/current.json`);
+        const response = await fetch(`https://ergast.com/api/f1/current.json`);
         const data = await response.json();
         return data.MRData.RaceTable.Races;
     } catch (error) {
